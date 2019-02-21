@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block foot %}
+
+<script src="{{ url_for('static', filename='js/cadastrar-pre-req.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="card">
+  <div class="card-header">Cadastro de Pre Requisitos</div>
+  <div class="card-body">
+    <form id="form">
+      <div class="form-group">
+        <label for="curso">Curso</label>
+        <select class="form-control" name="curso" id="curso">
+          <option value="0" disabled selected>Escolha um Curso</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="disciplina">Disciplina</label>
+        <select class="form-control" name="disciplina" id="disciplina" disabled>
+          <option value="0" disabled selected>Escolha uma Disciplina</option>
+        </select>
+      </div>
+      <div id="pre-requisitos">
+        <h2>Pre Pre-requisitos</h2>
+        <div class="form-group pre-req-1">
+        <!-- <div class="form-group pre-req"> -->
+          <select class="form-control pre-requisito" name="pre-requisito-1" id="pre-requisito-1" disabled>
+          <!-- <select class="form-control" name="pre-requisito" id="pre-requisito" disabled> -->
+            <option value="0" disabled selected>Escolha uma Disciplina</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn btn-secondary" type="button" id="add-pre-req" disabled>+ Pre Requisito</button>
+
+      <button class="btn btn-primary" id="enviar">Enviar</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

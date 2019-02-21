@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block foot %}
+
+<script src="{{ url_for('static', filename='js/cadastrar_curso.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<form id="form">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+  </div>
+  <div class="form-group">
+    <label for="desc">Descrição</label>
+    <input type="text" class="form-control" id="desc" name="desc" placeholder="Descrição">
+  </div>
+  <div class="form-group">
+    <label for="link_plano_pedagogico">Plano Pedagógico</label>
+    <input type="text" class="form-control" id="link_plano_pedagogico" name="link_plano_pedagogico" placeholder="https://endereco.com">
+  </div>
+  <button class="btn btn-primary" id="enviar">Enviar</button>
+</form>
+
+
+{% endblock %}

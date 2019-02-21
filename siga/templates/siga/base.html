@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'siga/css/lib/bootstrap/bootstrap.min.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Cursos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{ url_for('cursos.cadastrar') }}">Cadastrar</a>
+            <a class="dropdown-item" href="{ url_for('cursos.alterar') }}">Alterar</a>
+            <a class="dropdown-item" href="{ url_for('cursos.consultar') }}">Consultar</a>
+            <a class="dropdown-item" href="{ url_for('cursos.todos') }}">Todos os Cursos</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Professores
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Cadastrar</a>
+            <a class="dropdown-item" href="#">Alterar</a>
+            <a class="dropdown-item" href="#">Consultar</a>
+            <a class="dropdown-item" href="#">Todos os Professores</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Disciplinas
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Cadastrar</a>
+            <a class="dropdown-item" href="#">Alterar</a>
+            <a class="dropdown-item" href="#">Consultar</a>
+            <a class="dropdown-item" href="#">Todas as Disciplinas</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="alert-container"></div>
+  <div class="container">
+  {% block content %}{% endblock %}
+  </div>
+
+  <!-- <footer class="container">
+    <small>&copy; RoseraParqueTecnologico</small>
+  </footer> -->
+  <script src="{% static 'siga/js/lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'siga/js/lib/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  {% block foot %}{% endblock %}
+</body>
+</html>

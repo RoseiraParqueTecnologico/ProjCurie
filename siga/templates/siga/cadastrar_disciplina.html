@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block foot %}
+
+<script src="{{ url_for('static', filename='js/cadastrar_disciplina.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<form id="form">
+  <div class="form-group">
+    <label for="nome da disciplina">Nome</label>
+    <input type="text" class="form-control" id="nomeDisc" name="nomeDisc" placeholder="Nome disciplina">
+  </div>
+  <div class="form-group">
+    <label for="Descrição disciplina">Descrição</label>
+    <input type="text" class="form-control" id="descDisc" name="descDisc" placeholder="Descrição">
+  </div>
+  <button class="btn btn-primary" id="enviar">Enviar</button>
+</form>
+
+
+{% endblock %}

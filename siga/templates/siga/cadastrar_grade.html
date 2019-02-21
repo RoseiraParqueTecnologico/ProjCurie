@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block foot %}
+
+<script src="{{ url_for('static', filename='js/cadastrar_grade.js') }}"></script>
+
+{% endblock %}
+
+
+{% block content %}
+
+<form id="form">
+  <div class="form-group">
+    <label for="periodo">periodo</label>
+    <input type="text" class="form-control" id="periodo" name="periodo" placeholder="periodo">
+  </div>
+  <div class="form-group">
+    <label for="Formula">formula</label>
+    <input type="text" class="form-control" id="formula" name="formula" placeholder="Formula">
+  </div>
+  <div class="form-group">
+    <label for="Disciplina">disciplina</label>
+    <input type="text" class="form-control" id="codDisc" name="codDisc" placeholder="Selecionar Disciplina --em breve--">
+  </div>
+  <div class="form-group">
+    <label for="Professor">professor</label>
+    <input type="text" class="form-control" id="cpfProf" name="cpfProf" placeholder="Selecionar Professor --em breve--">
+  </div>
+  <button class="btn btn-primary" id="enviar">Enviar</button>
+</form>
+
+
+{% endblock %}
