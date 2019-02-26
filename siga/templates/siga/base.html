@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="{% static 'siga/css/lib/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'siga/css/libs/bootstrap/bootstrap.min.css' %}">
   {% block head %}{% endblock %}
 </head>
 <body>
@@ -25,10 +25,10 @@
             Cursos
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="{ url_for('cursos.cadastrar') }}">Cadastrar</a>
-            <a class="dropdown-item" href="{ url_for('cursos.alterar') }}">Alterar</a>
-            <a class="dropdown-item" href="{ url_for('cursos.consultar') }}">Consultar</a>
-            <a class="dropdown-item" href="{ url_for('cursos.todos') }}">Todos os Cursos</a>
+            <a class="dropdown-item" href="{% url 'cadastrar_curso' %}">Cadastrar</a>
+            <a class="dropdown-item" href="#">Alterar</a>
+            <a class="dropdown-item" href="#">Consultar</a>
+            <a class="dropdown-item" href="#">Todos os Cursos</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -36,7 +36,7 @@
             Professores
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Cadastrar</a>
+            <a class="dropdown-item" href="{% url 'cadastrar_professor' %}">Cadastrar</a>
             <a class="dropdown-item" href="#">Alterar</a>
             <a class="dropdown-item" href="#">Consultar</a>
             <a class="dropdown-item" href="#">Todos os Professores</a>
@@ -47,9 +47,10 @@
             Disciplinas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Cadastrar</a>
+            <a class="dropdown-item" href="{% url 'cadastrar_disciplina' %}">Cadastrar</a>
             <a class="dropdown-item" href="#">Alterar</a>
             <a class="dropdown-item" href="#">Consultar</a>
+            <a class="dropdown-item" href="{% url 'cadastrar_pre_requisitos' %}">Cadastrar Pré requisito</a>
             <a class="dropdown-item" href="#">Todas as Disciplinas</a>
           </div>
         </li>
@@ -64,8 +65,8 @@
   <!-- <footer class="container">
     <small>&copy; RoseraParqueTecnologico</small>
   </footer> -->
-  <script src="{% static 'siga/js/lib/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'siga/js/lib/bootstrap/bootstrap.min.js' %}"></script>
+  <script src="{% static 'siga/js/libs/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'siga/js/libs/bootstrap/bootstrap.min.js' %}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   {% block foot %}{% endblock %}
 </body>

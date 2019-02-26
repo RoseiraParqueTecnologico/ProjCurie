@@ -1,14 +1,9 @@
-{% extends 'base.html' %}
-
+{% extends 'siga/base.html' %}
 {% block foot %}
-
-<script src="{{ url_for('static', filename='js/cadastrar_curso.js') }}"></script>
-
+{% load static %}
+<script src="{% static 'siga/js/cadastrar_curso.js' %}"></script>
 {% endblock %}
-
-
 {% block content %}
-
 <form id="form">
   <div class="form-group">
     <label for="nome">Nome</label>
@@ -24,6 +19,4 @@
   </div>
   <button class="btn btn-primary" id="enviar">Enviar</button>
 </form>
-
-
 {% endblock %}

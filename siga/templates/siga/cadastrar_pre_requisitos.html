@@ -1,8 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'siga/base.html' %}
 
 {% block foot %}
 
-<script src="{{ url_for('static', filename='js/cadastrar-pre-req.js') }}"></script>
+{% load static %}
+<script src="{% static 'siga/js/cadastrar-pre-req.js' %}"></script>
 
 {% endblock %}
 

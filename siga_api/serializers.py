@@ -30,7 +30,8 @@ class ProfessorSerializer(PessoaSerializer):
 class CursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Curso
-        fields = '__all__'
+        read_only_fields = ['codigo', ]
+        fields =  '__all__'
 
 
 class DisciplinaSerializer(serializers.ModelSerializer):

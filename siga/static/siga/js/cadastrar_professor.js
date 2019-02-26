@@ -10,19 +10,19 @@ $('#enviar').click((e) => {
 
     $.ajax({
         type: 'POST',
-        url: '/api/alunos/cadastrar',
+        url: '/api/professor/',
+        dataType: 'json',
         data: JSON.stringify(json), 
-        success: function(response) {
-            if(response.status == 'success') {
-                $('.alert-container').html(
-                    `<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        ${response.data.nome} cadastrado com sucesso!
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>`
-                )
-            }
+        success: function(data) {
+            $('.alert-container').html(
+                `<div class="alert alert-success alert-dismissible fade show" role="alert">
+                    ${data.nome} cadastrado com sucesso!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>`
+            )
+        
         },
         error: (response) => {
             console.log(response.responseJSON);

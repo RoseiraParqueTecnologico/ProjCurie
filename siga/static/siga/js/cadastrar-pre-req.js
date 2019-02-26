@@ -2,11 +2,11 @@ let count = 1;
 $(document).ready(() => {
     $.ajax({
         type: 'GET',
-        url: '/api/cursos/get/',
-        success: function(data) { 
+        url: '/api/curso/',
+        success: data => { 
             let html = $('#curso').html();
             data.forEach(curso => {
-                html += `<option value="${curso.codigo}">${curso.nome}</option>`
+                html += `<option value="${curso.id}">${curso.nome}</option>`
             });
             $('#curso').html(html)
             },
@@ -26,15 +26,18 @@ $('#add-pre-req').click(() => {
 })
 
 $('#curso').change(() => {
+    console.log($('#curso'));
     $.ajax({
         type: 'GET',
-        url: `/api/disciplinas/listar/curso/${$('#curso').val()}`,
-        success: function(data) {
+        url: `/api/disciplina/`,
+        data: 'curso=' + $('#curso').val(),
+        success: data => {
+            console.log(data);
             let htmlDisciplina = $('#disciplina').html();
             let htmlPreRequisitos = $('#pre-requisito-1').html();
-            data.data.forEach(disciplina => {
-                htmlDisciplina += `<option value="${disciplina.codDisc}">${disciplina.nomeDisc}</option>`
-                htmlPreRequisitos += `<option value="${disciplina.codDisc}">${disciplina.nomeDisc}</option>`
+            data.forEach(disciplina => {
+                htmlDisciplina += `<option value="${disciplina.cod_disc}">${disciplina.nome_disc}</option>`
+                htmlPreRequisitos += `<option value="${disciplina.cod_disc}">${disciplina.nome_disc}</option>`
             });
             $('#disciplina').html(htmlDisciplina);
             $("#disciplina").prop('disabled', false);
@@ -75,7 +78,7 @@ $('#enviar').click((e) => {
     // console.log(json);
     $.ajax({
         type: 'POST',
-        url: '/api/disciplinas/cadastrar/pre-requisitos',
+        url: '/api/disciplina/',
         data: JSON.stringify(json), 
         success: function(data) { 
             $('.alert-container').html(
@@ -93,13 +96,3 @@ $('#enviar').click((e) => {
 });
 
 
-
-{
-    "cpf": "123",
-    "nome": "jose",
-    "endereco": "nao te interessa",
-    "dt_nasc": "2018-02-20",
-    "email_institucional": "seu@email.com",
-    "senha": "serio?",
-    "ra": "1234",
-}

@@ -19,7 +19,7 @@ class Professor(Pessoa):
 
 
 class Curso(models.Model):
-    codigo = models.IntegerField(primary_key=True)
+    # codigo = models.IntegerField(primary_key=True)
     nome = models.CharField(max_length=50)
     desc = models.TextField(blank=True, null=True)
     link_plano_pedagogico = models.CharField(max_length=100, 
@@ -37,6 +37,8 @@ class Disciplina(models.Model):
     desc_disc = models.CharField(max_length=90)
     curso = models.ForeignKey(Curso, models.DO_NOTHING, blank=True, null=True)
     pre_requisitos = models.ManyToManyField('Disciplina')
+
+    
 
 
 class Aluno(Pessoa):

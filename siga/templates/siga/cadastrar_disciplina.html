@@ -1,9 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'siga/base.html' %}
 
 {% block foot %}
-
-<script src="{{ url_for('static', filename='js/cadastrar_disciplina.js') }}"></script>
-
+{% load static %}
+<script src="{% static 'siga/js/cadastrar_disciplina.js' %}"></script>
 {% endblock %}
 
 
@@ -12,11 +11,18 @@
 <form id="form">
   <div class="form-group">
     <label for="nome da disciplina">Nome</label>
-    <input type="text" class="form-control" id="nomeDisc" name="nomeDisc" placeholder="Nome disciplina">
+    <input type="text" class="form-control" id="nomeDisc" name="nome_disc" placeholder="Nome disciplina">
   </div>
   <div class="form-group">
-    <label for="Descrição disciplina">Descrição</label>
-    <input type="text" class="form-control" id="descDisc" name="descDisc" placeholder="Descrição">
+    <label for="descDisc">Descrição</label>
+    <input type="text" class="form-control" id="descDisc" name="desc_disc" placeholder="Descrição">
+  </div>
+  <div class="form-group">
+    <label for="curso">Curso</label>
+    <select name="curso" id="cursos" disabled="disabled" class="form-control">
+      <option disabled selected>Curso</option>
+    </select>
+    
   </div>
   <button class="btn btn-primary" id="enviar">Enviar</button>
 </form>

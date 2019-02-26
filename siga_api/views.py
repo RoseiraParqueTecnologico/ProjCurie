@@ -20,6 +20,14 @@ class DisciplinaViewSet(viewsets.ModelViewSet):
     queryset = Disciplina.objects.all()
     serializer_class = DisciplinaSerializer
 
+
+    def get_queryset(self):
+        queryset = Disciplina.objects.all()
+        curso = self.request.query_params.get('curso', None)
+        if curso is not None:
+            queryset = queryset.filter(curso=curso)
+        return queryset
+
 class GradeDeAulasViewSet(viewsets.ModelViewSet):
     queryset = GradeDeAulas.objects.all()
     serializer_class = GradeDeAulasSerializer
