@@ -1,0 +1,46 @@
+{% extends 'siga/base.html' %}
+
+{% block foot %}
+{% load static %}
+<script src="{% static 'siga/js/cadastrar_aula.js' %}"></script>
+
+{% endblock %}
+{% block content %}
+
+<form id="form">
+  
+  <div class="form-group">
+    <label for="cursos">Curso</label>
+    <select name="cursos" id="cursos" disabled="disabled" class="form-control">
+      <option disabled selected>Curso</option>
+    </select>
+    
+  </div>
+
+
+  <div class="form-group">
+      <label for="disciplinas">Disciplina</label>
+      <select class="form-control" name="disciplinas" id="disciplinas" disabled>
+        <option value="0" disabled selected>Escolha uma Disciplina</option>
+      </select>
+  </div>
+
+  <div class="form-group">
+    <label for="turmas">Turma</label>
+    <select name="grade_aulas" id="turmas" disabled="disabled" class="form-control">
+      <option disabled selected>Turma</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="data">Data</label>
+    <input type="date" class="form-control" id="data" name="data" placeholder="data">
+  </div>
+  <div class="form-group">
+    <label for="descricao">Descição</label>
+    <textarea name="descricao" id="descricao" cols="30" rows="10" class="form-control"></textarea>
+  </div>
+  <button class="btn btn-primary" id="enviar">Enviar</button>
+</form>
+
+
+{% endblock %}

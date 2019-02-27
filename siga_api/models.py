@@ -64,3 +64,10 @@ class Leciona(models.Model):
 
     class Meta:
         unique_together = (('cpf_prof', 'cod_grade_aulas'),)
+
+
+
+class Aula(models.Model):
+    data = models.DateField()
+    grade_aulas = models.ForeignKey(GradeDeAulas, models.DO_NOTHING)
+    descricao = models.TextField()

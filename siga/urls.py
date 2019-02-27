@@ -23,4 +23,9 @@ urlpatterns = [
     path('professores/cadastrar',
          TemplateView.as_view(template_name='siga/cadastrar_professor.html'),
          name='cadastrar_professor'),
+    path('aulas/cadastrar',
+         TemplateView.as_view(template_name='siga/cadastrar_aula.html'),
+         name='cadastrar_aula'),
+     path('', TemplateView.as_view(template_name='siga/index.html'),
+         name='home'),
 ]

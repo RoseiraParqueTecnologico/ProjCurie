@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import Aluno, Curso, Professor, Disciplina, GradeDeAulas, Leciona
-from .serializers import ProfessorSerializer, CursoSerializer, AlunoSerializer, DisciplinaSerializer, GradeDeAulasSerializer, LecionaSerializer
+from .models import Aluno, Aula, Curso, Professor, Disciplina, GradeDeAulas, Leciona
+from .serializers import ProfessorSerializer, CursoSerializer, AlunoSerializer, DisciplinaSerializer, GradeDeAulasSerializer, LecionaSerializer, AulaSerializer
 from rest_framework import viewsets
 
 
@@ -35,3 +35,8 @@ class GradeDeAulasViewSet(viewsets.ModelViewSet):
 class LecionaViewSet(viewsets.ModelViewSet):
     queryset = Leciona.objects.all()
     serializer_class = LecionaSerializer
+
+
+class AulaViewSet(viewsets.ModelViewSet):
+    queryset = Aula.objects.all()
+    serializer_class = AulaSerializer

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Aluno, Curso, Pessoa, Professor, Disciplina, GradeDeAulas, Leciona
+from .models import Aluno, Aula, Curso, Pessoa, Professor, Disciplina, GradeDeAulas, Leciona
 
 
 class PessoaSerializer(serializers.ModelSerializer):
@@ -64,3 +64,7 @@ class LecionaSerializer(serializers.ModelSerializer):
         model = Leciona
         fields = '__all__'
 
+class AulaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Aula
+        fields = '__all__'
