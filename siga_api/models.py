@@ -64,3 +64,30 @@ class Leciona(models.Model):
 
     class Meta:
         unique_together = (('cpf_prof', 'cod_grade_aulas'),)
+
+class Atividade(models.Model):
+    cod_ativ = models.IntegerField(primary_key=True)
+    data = models.DateField()
+    nome_ativ = models.CharField(max_length=40)
+    desc_ativ = models.CharField(max_length=80)
+    cod_grade_aulas = models.ForeignKey(GradeDeAulas, models.DO_NOTHING)
+
+class Horarios_Aulas(models.Model):
+    dia_Sem = models.IntegerField(primary_key=True)
+    cod_grade_aulas = models.ForeignKey(GradeDeAulas,models.DO_NOTHING)
+    hr_inicio = models.DateField()
+    hr_termino = models.DateField()
+
+    class Meta:
+        unique_together = (('cod_grade_aulas'),)
+
+class Disciplina_Cursadas(models.Model):
+    ra_aluno = models.ForeignKey(Aluno,models.DO_NOTHING)
+    cod_disc = models.ForeignKey(Disciplina,models.DO_NOTHING)
+    ciclo = models.IntegerField(primary_key=True)
+    media = models.FloatField()
+    frequencia = models.IntegerField()
+    aprovado = models.BooleanField()
+    class Meta:
+        unique_together = (('ra_aluno','cod_disc'))
+        
