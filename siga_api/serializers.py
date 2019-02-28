@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Aluno, Aula, Curso, Pessoa, Professor, Disciplina, GradeDeAulas, Leciona
+from .models import Aluno, Curso, Pessoa, Professor, Disciplina, GradeDeAulas, Leciona, Atividade,Horarios_Aulas, Disciplina_Cursadas, Aula
 
 
 class PessoaSerializer(serializers.ModelSerializer):
@@ -67,4 +67,19 @@ class LecionaSerializer(serializers.ModelSerializer):
 class AulaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Aula
+        fields = '__all__'
+class AtividadeSerializer(serializers.ModelSerializer):
+    class Meta:
+        read_only_fields = ['cod_ativ']
+        model = Atividade
+        fields = '__all__'
+
+class Horarios_AulasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Horarios_Aulas
+        fields = '__all__'
+
+class Disciplina_CursadasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Disciplina_Cursadas
         fields = '__all__'
